@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28d35a36-5be3-4e54-8b5e-2732f00376f9" name="Changes" comment="" />
+    <list default="true" id="50c5bb98-862c-4b4b-bb7d-df4f725d980c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.msclientes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/com.msclientes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com.msclientes/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/com.msclientes/src/main/resources/application.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "MarhlonKorb"
+  }
 }]]></component>
-  <component name="ProjectId" id="2ra4Y1STqFvdecTuKNIdXd2ETdI" />
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MarhlonKorb/curso_microservices_clientes_avaliacao_credito.git",
+    "accountId": "b34d5186-45e2-417b-88c7-d239f9d5389a"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2rbAfTP9Fcu5GSYJPzaINmDQvYh" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -18,34 +37,19 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/marhl/Documents/Github/curso_microservices/com.msservicediscovery"
+    "last_opened_file_path": "C:/Users/marhl/Documents/Github/curso_microservices/com.msgateway"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="curso_microservices" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="curso_microservices" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="28d35a36-5be3-4e54-8b5e-2732f00376f9" name="Changes" comment="" />
-      <created>1736783901195</created>
+      <changelist id="50c5bb98-862c-4b4b-bb7d-df4f725d980c" name="Changes" comment="" />
+      <created>1736817505402</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1736783901195</updated>
+      <updated>1736817505402</updated>
     </task>
     <servers />
   </component>
