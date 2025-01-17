@@ -11,12 +11,16 @@ import org.springframework.context.annotation.Bean;
 @EnableDiscoveryClient
 public class Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
-	@Bean
-	public RouteLocator myRoutes(RouteLocatorBuilder builder) {
-		return builder.routes().route(r -> r.path("/clientes/**").uri("lb://msclientes")).build();
-	}
+    @Bean
+    public RouteLocator myRoutes(RouteLocatorBuilder builder) {
+        return builder
+                .routes()
+                .route(r -> r.path("/clientes/**").uri("lb://msclientes"))
+                .route(r -> r.path("/cartoes/**").uri("lb://mscartao"))
+                .build();
+    }
 }

@@ -1,7 +1,7 @@
 package com.msclientes.application;
 
 import com.msclientes.domain.Cliente;
-import com.msclientes.infra.ClienteRepository;
+import com.msclientes.infra.repository.ClienteRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
