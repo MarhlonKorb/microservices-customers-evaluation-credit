@@ -1,4 +1,4 @@
-package com.mscartao.domain;
+package com.mscartao.domain.model;
 
 import jakarta.persistence.*;
 
@@ -20,10 +20,29 @@ public class Cartao {
 
     private BigDecimal limiteBasico;
 
+    public Cartao() {
+    }
+
     public Cartao(String nome, BandeiraCartao bandeira, BigDecimal renda, BigDecimal limiteBasico) {
         this.nome = nome;
         this.bandeira = bandeira;
         this.renda = renda;
         this.limiteBasico = limiteBasico;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public BandeiraCartao getBandeira() {
+        return bandeira;
+    }
+
+    public BigDecimal getRenda() {
+        return renda;
+    }
+
+    public BigDecimal getLimiteBasico() {
+        return limiteBasico;
     }
 }

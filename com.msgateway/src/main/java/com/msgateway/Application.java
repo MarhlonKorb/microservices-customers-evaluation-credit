@@ -21,6 +21,7 @@ public class Application {
                 .routes()
                 .route(r -> r.path("/clientes/**").uri("lb://msclientes"))
                 .route(r -> r.path("/cartoes/**").uri("lb://mscartao"))
+                .route(r -> r.path("/avaliacao-credito/**").uri("lb://msavaliadorcredito"))
                 .build();
     }
 }

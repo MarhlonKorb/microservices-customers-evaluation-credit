@@ -1,4 +1,4 @@
-package com.mscartao.domain;
+package com.mscartao.domain.model;
 
 public enum BandeiraCartao {
 

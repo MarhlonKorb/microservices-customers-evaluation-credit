@@ -1,6 +1,6 @@
 package com.mscartao.application;
 
-import com.mscartao.domain.Cartao;
+import com.mscartao.domain.model.Cartao;
 import com.mscartao.infra.repository.CartaoRepository;
 import org.springframework.stereotype.Service;
 
