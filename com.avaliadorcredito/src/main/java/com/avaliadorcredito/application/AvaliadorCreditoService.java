@@ -2,9 +2,11 @@ package com.avaliadorcredito.application;
 
 import com.avaliadorcredito.application.exception.DadosClienteNotFoundException;
 import com.avaliadorcredito.application.exception.ErroComunicacaoMicroservicesException;
+import com.avaliadorcredito.application.exception.ErroSolicitacaoCartaoException;
 import com.avaliadorcredito.domain.model.*;
 import com.avaliadorcredito.infra.clients.CartaoResourceClient;
 import com.avaliadorcredito.infra.clients.ClienteResourceClient;
+import com.avaliadorcredito.infra.mqueue.SolicitacaoEmissaoCartaoPublisher;
 import feign.FeignException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +14,8 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Objects;
+import java.util.UUID;
 
 import static java.util.Objects.requireNonNull;
 
@@ -20,10 +24,12 @@ public class AvaliadorCreditoService {
 
     private final ClienteResourceClient clienteResourceClient;
     private final CartaoResourceClient cartaoResourceClient;
+    private final SolicitacaoEmissaoCartaoPublisher solicitacaoEmissaoCartaoPublisher;
 
-    public AvaliadorCreditoService(ClienteResourceClient clienteResourceClient, CartaoResourceClient cartaoResourceClient) {
+    public AvaliadorCreditoService(ClienteResourceClient clienteResourceClient, CartaoResourceClient cartaoResourceClient, SolicitacaoEmissaoCartaoPublisher solicitacaoEmissaoCartaoPublisher) {
         this.clienteResourceClient = clienteResourceClient;
         this.cartaoResourceClient = cartaoResourceClient;
+        this.solicitacaoEmissaoCartaoPublisher = solicitacaoEmissaoCartaoPublisher;
     }
 
     public SituacaoCliente obterSituacaoCliente(String cpf) throws DadosClienteNotFoundException, ErroComunicacaoMicroservicesException {
@@ -91,5 +97,14 @@ public class AvaliadorCreditoService {
      */
     public BigDecimal calculaLimiteAprovadoCliente(BigDecimal limiteBasicoCartao, BigDecimal idadeCliente) {
         return idadeCliente.divide(BigDecimal.TEN).multiply(limiteBasicoCartao);
+    }
+
+    public ProtocoloSolicitacaoCartao solicitarEmissaoCartao(DadosSolicitacaoEmissaoCartao dadosSolicitacaoEmissaoCartao){
+        try {
+            solicitacaoEmissaoCartaoPublisher.solicitarCartao(dadosSolicitacaoEmissaoCartao);
+            return new ProtocoloSolicitacaoCartao(UUID.randomUUID().toString());
+        } catch (Exception e) {
+            throw new ErroSolicitacaoCartaoException(e.getMessage());
+        }
     }
 }

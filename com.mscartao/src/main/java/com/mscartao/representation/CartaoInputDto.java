@@ -5,9 +5,9 @@ import com.mscartao.domain.model.Cartao;
 
 import java.math.BigDecimal;
 
-public record CartaoInputDto(String nome, BandeiraCartao bandeira, BigDecimal renda, BigDecimal limite) {
+public record CartaoInputDto(Long id, String nome, BandeiraCartao bandeira, BigDecimal renda, BigDecimal limite) {
 
     public Cartao toModel(){
-        return new Cartao(nome, bandeira, renda, limite);
+        return new Cartao(id, nome, bandeira, renda, limite);
     }
 }

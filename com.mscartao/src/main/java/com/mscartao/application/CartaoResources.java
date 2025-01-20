@@ -2,7 +2,7 @@ package com.mscartao.application;
 
 import com.mscartao.domain.model.Cartao;
 import com.mscartao.representation.CartaoInputDto;
-import com.mscartao.representation.ClienteCartaoOuput;
+import com.mscartao.representation.ClienteCartaoOutput;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,11 +35,11 @@ public class CartaoResources {
     }
 
     @GetMapping(params = "cpf")
-    public ResponseEntity<List<ClienteCartaoOuput>> getCartoesClienteByCpf(@RequestParam("cpf") String cpf) {
+    public ResponseEntity<List<ClienteCartaoOutput>> getCartoesClienteByCpf(@RequestParam("cpf") String cpf) {
         var clienteCartaos = clienteCartaoService.listCartoesByCpf(cpf);
-        List<ClienteCartaoOuput> listaCartoes = clienteCartaos
+        List<ClienteCartaoOutput> listaCartoes = clienteCartaos
                 .stream()
-                .map(ClienteCartaoOuput::fromModel)
+                .map(ClienteCartaoOutput::fromModel)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(listaCartoes);
     }
